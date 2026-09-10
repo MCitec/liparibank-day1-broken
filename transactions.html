@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transazioni — LipariBank</title>
+  <link rel="stylesheet" href="dist/main.css">
+</head>
+<body>
+
+  <div class="app">
+
+    <!-- =====================================================================
+         SIDEBAR
+         ===================================================================== -->
+    <aside class="sidebar">
+      <div class="sidebar__logo">
+        <img src="assets/logo.svg" alt="LipariBank">
+      </div>
+
+      <nav class="sidebar__nav" aria-label="Navigazione principale">
+        <ul class="sidebar-nav__list">
+
+          <li class="sidebar-nav__item">
+            <a href="dashboard.html" class="sidebar-nav__link">
+              <span class="nav-icon">🏠</span>
+              <span>Dashboard</span>
+            </a>
+          </li>
+
+          <li class="sidebar-nav__item">
+            <a href="transactions.html" class="sidebar-nav__link sidebar-nav__link--active" aria-current="page">
+              <span class="nav-icon">💳</span>
+              <span>Transazioni</span>
+            </a>
+          </li>
+
+          <li class="sidebar-nav__item">
+            <a href="account.html" class="sidebar-nav__link">
+              <span class="nav-icon">👤</span>
+              <span>Il Mio Conto</span>
+            </a>
+          </li>
+
+          <li class="sidebar-nav__item">
+            <a href="policy-form.html" class="sidebar-nav__link">
+              <span class="nav-icon">📋</span>
+              <span>Polizze</span>
+            </a>
+          </li>
+
+        </ul>
+      </nav>
+
+      <div class="sidebar__footer">
+        © 2024 LipariBank S.p.A.
+      </div>
+    </aside>
+
+    <!-- =====================================================================
+         MAIN
+         ===================================================================== -->
+    <main class="main">
+
+      <!-- Topbar -->
+      <header class="topbar">
+        <h1 class="topbar__title">Transazioni</h1>
+        <div class="topbar__user">
+          <span>Mario Rossi</span>
+          <div class="topbar__avatar">MR</div>
+        </div>
+      </header>
+
+      <!-- Contenuto pagina -->
+      <div class="page-content">
+
+        <!-- Filtri -->
+        <div class="filters-bar">
+          <select class="form-control">
+            <option value="">Tutti i tipi</option>
+            <option value="credit">Entrate</option>
+            <option value="debit">Uscite</option>
+            <option value="transfer">Bonifici</option>
+          </select>
+
+          <select class="form-control">
+            <option value="">Tutte le categorie</option>
+            <option value="alimentari">Alimentari</option>
+            <option value="utenze">Utenze</option>
+            <option value="svago">Svago</option>
+            <option value="shopping">Shopping</option>
+            <option value="trasporti">Trasporti</option>
+          </select>
+
+          <input type="date" class="form-control" value="2024-01-01" aria-label="Data inizio">
+          <input type="date" class="form-control" value="2024-01-31" aria-label="Data fine">
+
+          <button class="btn btn--primary">Filtra</button>
+          <button class="btn btn--ghost">Reset</button>
+        </div>
+
+        <!-- Tabella completa -->
+        <div class="card">
+          <div class="card__header">
+            <h2 class="card__title">Storico Movimenti — Gennaio 2024</h2>
+            <button class="btn btn--outline btn--sm">⬇ Esporta CSV</button>
+          </div>
+
+          <table class="transactions-table">
+            <thead>
+              <tr>
+                <th>Data</th>
+                <th>Descrizione</th>
+                <th>Categoria</th>
+                <th>Conto</th>
+                <th>Stato</th>
+                <th class="col-amount">Importo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="col-date">03 gen 2024</td>
+                <td>Stipendio — Acme S.r.l.</td>
+                <td><span class="badge badge--success">Entrata</span></td>
+                <td>Conto Corrente</td>
+                <td><span class="badge badge--success">Completata</span></td>
+                <td class="col-amount amount amount--credit">+€ 2.800,00</td>
+              </tr>
+              <tr>
+                <td class="col-date">02 gen 2024</td>
+                <td>Esselunga — Spesa settimanale</td>
+                <td><span class="badge badge--neutral">Alimentari</span></td>
+                <td>Carta Credito</td>
+                <td><span class="badge badge--success">Completata</span></td>
+                <td class="col-amount amount amount--debit">-€ 87,40</td>
+              </tr>
+              <tr>
+                <td class="col-date">01 gen 2024</td>
+                <td>Enel Energia — Bolletta dicembre</td>
+                <td><span class="badge badge--neutral">Utenze</span></td>
+                <td>Conto Corrente</td>
+                <td><span class="badge badge--success">Completata</span></td>
+                <td class="col-amount amount amount--debit">-€ 124,00</td>
+              </tr>
+              <tr>
+                <td class="col-date">31 dic 2023</td>
+                <td>Netflix — Abbonamento mensile</td>
+                <td><span class="badge badge--neutral">Svago</span></td>
+                <td>Carta Credito</td>
+                <td><span class="badge badge--success">Completata</span></td>
+                <td class="col-amount amount amount--debit">-€ 15,99</td>
+              </tr>
+              <tr>
+                <td class="col-date">30 dic 2023</td>
+                <td>Rimborso spese — Mario V.</td>
+                <td><span class="badge badge--info">Bonifico</span></td>
+                <td>Conto Corrente</td>
+                <td><span class="badge badge--success">Completata</span></td>
+                <td class="col-amount amount amount--credit">+€ 50,00</td>
+              </tr>
+              <tr>
+                <td class="col-date">29 dic 2023</td>
+                <td>Amazon — Ordine #114-789</td>
+                <td><span class="badge badge--neutral">Shopping</span></td>
+                <td>Carta Credito</td>
+                <td><span class="badge badge--warning">In attesa</span></td>
+                <td class="col-amount amount amount--debit">-€ 239,00</td>
+              </tr>
+              <tr>
+                <td class="col-date">28 dic 2023</td>
+                <td>Trenitalia — Milano-Roma</td>
+                <td><span class="badge badge--neutral">Trasporti</span></td>
+                <td>Conto Corrente</td>
+                <td><span class="badge badge--success">Completata</span></td>
+                <td class="col-amount amount amount--debit">-€ 68,50</td>
+              </tr>
+              <tr>
+                <td class="col-date">27 dic 2023</td>
+                <td>Farmacia Centrale</td>
+                <td><span class="badge badge--neutral">Salute</span></td>
+                <td>Carta Credito</td>
+                <td><span class="badge badge--success">Completata</span></td>
+                <td class="col-amount amount amount--debit">-€ 34,20</td>
+              </tr>
+              <tr>
+                <td class="col-date">26 dic 2023</td>
+                <td>Bonus produttività Q4</td>
+                <td><span class="badge badge--success">Entrata</span></td>
+                <td>Conto Corrente</td>
+                <td><span class="badge badge--success">Completata</span></td>
+                <td class="col-amount amount amount--credit">+€ 400,00</td>
+              </tr>
+              <tr>
+                <td class="col-date">24 dic 2023</td>
+                <td>Ristorante Da Luigi</td>
+                <td><span class="badge badge--neutral">Ristorazione</span></td>
+                <td>Carta Credito</td>
+                <td><span class="badge badge--success">Completata</span></td>
+                <td class="col-amount amount amount--debit">-€ 92,00</td>
+              </tr>
+              <tr>
+                <td class="col-date">22 dic 2023</td>
+                <td>Mutuo casa — rata dicembre</td>
+                <td><span class="badge badge--neutral">Casa</span></td>
+                <td>Conto Corrente</td>
+                <td><span class="badge badge--success">Completata</span></td>
+                <td class="col-amount amount amount--debit">-€ 780,00</td>
+              </tr>
+              <tr>
+                <td class="col-date">20 dic 2023</td>
+                <td>ATM prelievo contante</td>
+                <td><span class="badge badge--neutral">Contante</span></td>
+                <td>Conto Corrente</td>
+                <td><span class="badge badge--success">Completata</span></td>
+                <td class="col-amount amount amount--debit">-€ 200,00</td>
+              </tr>
+              <tr>
+                <td class="col-date">18 dic 2023</td>
+                <td>Spotify — Premium famiglia</td>
+                <td><span class="badge badge--neutral">Svago</span></td>
+                <td>Carta Credito</td>
+                <td><span class="badge badge--success">Completata</span></td>
+                <td class="col-amount amount amount--debit">-€ 14,99</td>
+              </tr>
+              <tr>
+                <td class="col-date">15 dic 2023</td>
+                <td>Rimborso assicurazione auto</td>
+                <td><span class="badge badge--success">Entrata</span></td>
+                <td>Conto Corrente</td>
+                <td><span class="badge badge--success">Completata</span></td>
+                <td class="col-amount amount amount--credit">+€ 180,00</td>
+              </tr>
+              <tr>
+                <td class="col-date">12 dic 2023</td>
+                <td>Palestra FitClub — mensile</td>
+                <td><span class="badge badge--neutral">Salute</span></td>
+                <td>Carta Credito</td>
+                <td><span class="badge badge--success">Completata</span></td>
+                <td class="col-amount amount amount--debit">-€ 45,00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+
+</body>
+</html>
