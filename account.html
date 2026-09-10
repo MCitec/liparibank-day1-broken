@@ -72,12 +72,12 @@
       <div class="page-content">
 
         <!-- Intestazione conto -->
-        <div class="grid grid--cols-2 mb-xl">
+        <div class="bank-grid bank-grid--cols-2 bank-spacing bank-spacing--mb-xl">
 
-          <div class="card">
-            <div class="card__header">
-              <h2 class="card__title">Dati Anagrafici</h2>
-              <button class="btn btn--outline btn--sm">✏️ Modifica</button>
+          <div class="bank-card">
+            <div class="bank-card__header">
+              <h2 class="bank-card__title">Dati Anagrafici</h2>
+              <button class="bank-button bank-button--outline bank-button--sm">✏️ Modifica</button>
             </div>
             <div class="account-info-grid">
               <div class="account-info-item">
@@ -107,9 +107,9 @@
             </div>
           </div>
 
-          <div class="card">
-            <div class="card__header">
-              <h2 class="card__title">Dettagli Conto</h2>
+          <div class="bank-card">
+            <div class="bank-card__header">
+              <h2 class="bank-card__title">Dettagli Conto</h2>
             </div>
             <div class="account-info-grid">
               <div class="account-info-item">
@@ -142,11 +142,11 @@
         </div>
 
         <!-- Sicurezza e impostazioni -->
-        <div class="grid grid--cols-2 mb-xl">
+        <div class="bank-grid bank-grid--cols-2 bank-spacing bank-spacing--mb-xl">
 
-          <div class="card">
-            <div class="card__header">
-              <h2 class="card__title">Sicurezza</h2>
+          <div class="bank-card">
+            <div class="bank-card__header">
+              <h2 class="bank-card__title">Sicurezza</h2>
             </div>
 
             <div style="display: flex; flex-direction: column; gap: 16px;">
@@ -156,7 +156,7 @@
                   <div style="font-weight:500; font-size:14px;">Password di accesso</div>
                   <div style="font-size:12px; color:#7f8c8d;">Ultima modifica: 3 mesi fa</div>
                 </div>
-                <button class="btn btn--outline btn--sm">Cambia</button>
+                <button class="bank-button bank-button--outline bank-button--sm">Cambia</button>
               </div>
 
               <div style="display:flex; justify-content:space-between; align-items:center; padding:12px 0; border-bottom:1px solid #dde1e7;">
@@ -180,15 +180,15 @@
                   <div style="font-weight:500; font-size:14px;">Sessioni attive</div>
                   <div style="font-size:12px; color:#7f8c8d;">1 dispositivo connesso</div>
                 </div>
-                <button class="btn btn--ghost btn--sm">Gestisci</button>
+                <button class="bank-button bank-button--ghost bank-button--sm">Gestisci</button>
               </div>
 
             </div>
           </div>
 
-          <div class="card">
-            <div class="card__header">
-              <h2 class="card__title">Preferenze</h2>
+          <div class="bank-card">
+            <div class="bank-card__header">
+              <h2 class="bank-card__title">Preferenze</h2>
             </div>
 
             <div style="display: flex; flex-direction: column; gap: 16px;">
@@ -220,7 +220,7 @@
                 </select>
               </div>
 
-              <button class="btn btn--primary">Salva preferenze</button>
+              <button class="bank-button bank-button--primary">Salva preferenze</button>
 
             </div>
           </div>
@@ -228,17 +228,17 @@
         </div>
 
         <!-- Zona pericolosa -->
-        <div class="card">
-          <div class="card__header">
-            <h2 class="card__title" style="color:#e74c3c;">Zona pericolosa</h2>
+        <div class="bank-card">
+          <div class="bank-card__header">
+            <h2 class="bank-card__title" style="color:#e74c3c;">Zona pericolosa</h2>
           </div>
           <div class="alert alert--danger" style="margin-bottom:16px;">
             <span>⚠️</span>
             <div>Le azioni in questa sezione sono irreversibili. Procedi con cautela.</div>
           </div>
           <div style="display:flex; gap:16px;">
-            <button class="btn btn--ghost btn--sm">Scarica tutti i dati</button>
-            <button class="btn btn--danger btn--sm">Chiudi conto</button>
+            <button class="bank-button bank-button--ghost bank-button--sm">Scarica tutti i dati</button>
+            <button class="bank-button bank-button--danger bank-button--sm">Chiudi conto</button>
           </div>
         </div>
 

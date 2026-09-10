@@ -23,7 +23,7 @@ body {
   min-height: 100vh;
 }
 
-.skip-link {
+.bank-skip-link {
   background: $color-secondary;
   color: $color-primary;
   font-weight: 700;
@@ -196,7 +196,7 @@ svg {
 // Grid utility
 // =============================================================================
 
-.grid {
+.bank-grid {
   display: grid;
   gap: $spacing-lg;
 
@@ -213,23 +213,26 @@ svg {
   }
 }
 
-.grid--main {
+.bank-grid--main {
   display: grid;
   grid-template-columns: 1fr 340px;
   gap: $spacing-lg;
 }
 
-// Utility
-.mb-lg {
+.bank-spacing {
+  display: block;
+}
+
+.bank-spacing--mb-lg {
   margin-bottom: $spacing-lg;
 }
-.mb-md {
+.bank-spacing--mb-md {
   margin-bottom: $spacing-md;
 }
-.mb-xl {
+.bank-spacing--mb-xl {
   margin-bottom: $spacing-xl;
 }
-.mt-lg {
+.bank-spacing--mt-lg {
   margin-top: $spacing-lg;
 }
 
@@ -276,7 +279,7 @@ svg {
 
 .bank-sidebar__link:focus-visible,
 .bank-widget__action:focus-visible,
-.skip-link:focus-visible {
+.bank-skip-link:focus-visible {
   outline: 3px solid $color-secondary;
   outline-offset: 3px;
 }
