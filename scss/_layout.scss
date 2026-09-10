@@ -2,10 +2,12 @@
 // _layout.scss — Layout strutturale LipariBank
 // =============================================================================
 
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
-  box-sizing:border-box;
+  box-sizing: border-box;
 }
 
 html {
@@ -85,7 +87,7 @@ svg {
   align-items: center;
   gap: $spacing-md;
   padding: $spacing-sm $spacing-lg;
-  color: rgba($color-white, 0.70);
+  color: rgba($color-white, 0.7);
   text-decoration: none;
   font-size: $font-size-sm;
   font-weight: 500;
@@ -115,7 +117,7 @@ svg {
   padding: $spacing-lg;
   border-top: 1px solid rgba($color-white, 0.1);
   font-size: $font-size-sm;
-  color: rgba($color-white, 0.50);
+  color: rgba($color-white, 0.5);
 }
 
 // -----------------------------------------------------------------------------
@@ -203,7 +205,15 @@ svg {
 }
 
 // Utility
-.mb-lg { margin-bottom: $spacing-lg; }
-.mb-md { margin-bottom: $spacing-md; }
-.mb-xl { margin-bottom: $spacing-xl; }
-.mt-lg { margin-top: $spacing-lg; }
+.mb-lg {
+  margin-bottom: $spacing-lg;
+}
+.mb-md {
+  margin-bottom: $spacing-md;
+}
+.mb-xl {
+  margin-bottom: $spacing-xl;
+}
+.mt-lg {
+  margin-top: $spacing-lg;
+}
