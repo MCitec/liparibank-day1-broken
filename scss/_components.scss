@@ -58,17 +58,27 @@
     color: $color-text;
     line-height: 1.1;
 
-    &--positive { color: $color-success; }
-    &--negative { color: $color-danger; }
-    &--accent   { color: $color-accent; }
+    &--positive {
+      color: $color-success;
+    }
+    &--negative {
+      color: $color-danger;
+    }
+    &--accent {
+      color: $color-accent;
+    }
   }
 
   &__change {
     font-size: $font-size-sm;
     margin-top: $spacing-sm;
 
-    &--up   { color: $color-success; }
-    &--down { color: $color-danger; }
+    &--up {
+      color: $color-success;
+    }
+    &--down {
+      color: $color-danger;
+    }
   }
 }
 
@@ -83,14 +93,18 @@
     background: $color-secondary;
     color: $color-white;
 
-    &:hover { background: darken($color-secondary, 8%); }
+    &:hover {
+      background: darken($color-secondary, 8%);
+    }
   }
 
   &--secondary {
     background: $color-primary;
     color: $color-white;
 
-    &:hover { background: darken($color-primary, 6%); }
+    &:hover {
+      background: darken($color-primary, 6%);
+    }
   }
 
   &--outline {
@@ -98,7 +112,9 @@
     color: $color-secondary;
     border: 1.5px solid $color-secondary;
 
-    &:hover { background: rgba($color-secondary, 0.08); }
+    &:hover {
+      background: rgba($color-secondary, 0.08);
+    }
   }
 
   &--ghost {
@@ -116,7 +132,9 @@
     background: $color-danger;
     color: $color-white;
 
-    &:hover { background: darken($color-danger, 8%); }
+    &:hover {
+      background: darken($color-danger, 8%);
+    }
   }
 
   &--sm {
@@ -129,7 +147,9 @@
     font-size: $font-size-lg;
   }
 
-  &--full { width: 100%; }
+  &--full {
+    width: 100%;
+  }
 }
 
 // =============================================================================
@@ -163,7 +183,9 @@
   font-size: $font-size-base;
   color: $color-text;
   background: $color-white;
-  transition: border-color $transition-fast, box-shadow $transition-fast;
+  transition:
+    border-color $transition-fast,
+    box-shadow $transition-fast;
 
   &:focus {
     outline: none;
@@ -252,8 +274,12 @@ select.form-control {
 .amount {
   font-weight: 600;
 
-  &--credit { color: $color-success; }
-  &--debit  { color: $color-danger; }
+  &--credit {
+    color: $color-success;
+  }
+  &--debit {
+    color: $color-danger;
+  }
 }
 
 // =============================================================================
@@ -310,26 +336,26 @@ select.form-control {
   gap: $spacing-md;
 
   &--success {
-    background: rgba($color-success, 0.10);
-    border: 1px solid rgba($color-success, 0.30);
+    background: rgba($color-success, 0.1);
+    border: 1px solid rgba($color-success, 0.3);
     color: darken($color-success, 15%);
   }
 
   &--warning {
-    background: rgba($color-warning, 0.10);
-    border: 1px solid rgba($color-warning, 0.30);
+    background: rgba($color-warning, 0.1);
+    border: 1px solid rgba($color-warning, 0.3);
     color: darken($color-warning, 20%);
   }
 
   &--danger {
-    background: rgba($color-danger, 0.10);
-    border: 1px solid rgba($color-danger, 0.30);
+    background: rgba($color-danger, 0.1);
+    border: 1px solid rgba($color-danger, 0.3);
     color: darken($color-danger, 10%);
   }
 
   &--info {
-    background: rgba($color-secondary, 0.10);
-    border: 1px solid rgba($color-secondary, 0.30);
+    background: rgba($color-secondary, 0.1);
+    border: 1px solid rgba($color-secondary, 0.3);
     color: darken($color-secondary, 15%);
   }
 }
@@ -364,7 +390,11 @@ select.form-control {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(145deg, $color-primary 0%, $color-primary-light 100%);
+  background: linear-gradient(
+    145deg,
+    $color-primary 0%,
+    $color-primary-light 100%
+  );
   padding: $spacing-lg;
 }
 
@@ -412,7 +442,9 @@ select.form-control {
       text-decoration: none;
       font-weight: 500;
 
-      &:hover { text-decoration: underline; }
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }
@@ -528,4 +560,228 @@ select.form-control {
   height: 1px;
   background: $color-border;
   margin: $spacing-lg 0;
+}
+
+// =============================================================================
+// Assignment dashboard components
+// =============================================================================
+
+.bank-sidebar__brand {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  color: $color-white;
+  font-size: $font-size-lg;
+  font-weight: 700;
+  padding: $spacing-sm $spacing-xs $spacing-xl;
+}
+
+.bank-sidebar__mark {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: $radius-sm;
+  background: $color-secondary;
+  color: $color-primary;
+  font-weight: 800;
+}
+
+.bank-sidebar__nav {
+  flex: 1;
+}
+
+.bank-sidebar__list {
+  display: grid;
+  gap: $spacing-xs;
+  list-style: none;
+}
+
+.bank-sidebar__link {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  border-radius: $radius-sm;
+  color: rgba($color-white, 0.72);
+  padding: $spacing-sm $spacing-md;
+  text-decoration: none;
+  transition:
+    background $transition-fast,
+    color $transition-fast;
+
+  &:hover,
+  &--active {
+    background: rgba($color-white, 0.12);
+    color: $color-white;
+  }
+
+  &--active {
+    box-shadow: inset 3px 0 0 $color-secondary;
+  }
+}
+
+.bank-sidebar__icon,
+.bank-header__icon,
+.bank-widget__icon {
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+}
+
+.bank-sidebar__footer {
+  border-top: 1px solid rgba($color-white, 0.14);
+  color: rgba($color-white, 0.58);
+  font-size: $font-size-xs;
+  padding-top: $spacing-lg;
+}
+
+.bank-header__title {
+  color: $color-primary;
+  font-size: $font-size-xl;
+  font-weight: 700;
+}
+
+.bank-header__user {
+  align-items: center;
+  display: flex;
+  gap: $spacing-sm;
+}
+
+.bank-header__avatar {
+  align-items: center;
+  background: $color-primary;
+  border-radius: $radius-full;
+  color: $color-white;
+  display: flex;
+  font-size: $font-size-sm;
+  font-weight: 700;
+  height: 38px;
+  justify-content: center;
+  width: 38px;
+}
+
+.bank-header__user-name {
+  color: $color-text;
+  font-size: $font-size-sm;
+  font-weight: 600;
+}
+
+.bank-header__user-role {
+  color: $color-text-muted;
+  display: block;
+  font-size: $font-size-xs;
+}
+
+.bank-page-intro {
+  margin-bottom: $spacing-xl;
+}
+
+.bank-page-intro__eyebrow {
+  color: $color-secondary;
+  font-size: $font-size-xs;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.bank-page-intro__title {
+  color: $color-primary;
+  font-size: $font-size-2xl;
+  margin-top: $spacing-xs;
+}
+
+.bank-page-intro__text {
+  color: $color-text-muted;
+  margin-top: $spacing-xs;
+}
+
+.bank-widgets {
+  display: grid;
+  gap: $spacing-lg;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.bank-widget {
+  background: $color-white;
+  border: 1px solid rgba($color-primary, 0.08);
+  border-radius: $radius-md;
+  box-shadow: $shadow-sm;
+  min-width: 0;
+  padding: $spacing-lg;
+}
+
+.bank-widget__header {
+  align-items: center;
+  display: flex;
+  gap: $spacing-sm;
+  justify-content: space-between;
+  margin-bottom: $spacing-xl;
+}
+
+.bank-widget__heading {
+  align-items: center;
+  color: $color-primary;
+  display: flex;
+  font-size: $font-size-base;
+  gap: $spacing-sm;
+}
+
+.bank-widget__icon {
+  color: $color-secondary;
+}
+
+.bank-widget__label {
+  color: $color-text-muted;
+  font-size: $font-size-xs;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.bank-widget__value {
+  color: $color-primary;
+  font-size: $font-size-2xl;
+  font-weight: 700;
+}
+
+.bank-widget__meta {
+  align-items: center;
+  color: $color-text-muted;
+  display: flex;
+  font-size: $font-size-sm;
+  gap: $spacing-sm;
+  margin-top: $spacing-sm;
+}
+
+.bank-widget__trend {
+  color: $color-success;
+  font-weight: 700;
+}
+
+.bank-widget__action {
+  color: $color-primary;
+  display: inline-flex;
+  font-size: $font-size-sm;
+  font-weight: 700;
+  margin-top: $spacing-lg;
+  text-decoration: none;
+
+  &:hover {
+    color: darken($color-primary, 12%);
+  }
+}
+
+@media (max-width: #{$bp-md - 1px}) {
+  .bank-widgets {
+    grid-template-columns: 1fr;
+  }
+
+  .bank-header__title {
+    font-size: $font-size-lg;
+  }
+
+  .bank-header__user-name,
+  .bank-header__user-role {
+    display: none;
+  }
 }

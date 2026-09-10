@@ -1,0 +1,17 @@
+# Dipendenze npm - si scaricano con "npm install", non si committano
+node_modules/
+
+# File compilati - si rigenerano con "npm run build:css"
+css/main.css
+css/main.css.map
+
+# File di sistema
+.DS_Store
+Thumbs.db
+
+# File di ambiente (credenziali, configurazioni locali)
+.env
+.env.local
+
+# Cartella di output build
+dist/

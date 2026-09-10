@@ -23,6 +23,21 @@ body {
   min-height: 100vh;
 }
 
+.skip-link {
+  background: $color-secondary;
+  color: $color-primary;
+  font-weight: 700;
+  left: $spacing-md;
+  padding: $spacing-sm $spacing-md;
+  position: fixed;
+  top: -100px;
+  z-index: 1000;
+
+  &:focus {
+    top: $spacing-md;
+  }
+}
+
 img,
 svg {
   display: block;
@@ -216,4 +231,80 @@ svg {
 }
 .mt-lg {
   margin-top: $spacing-lg;
+}
+
+// =============================================================================
+// Assignment dashboard shell
+// =============================================================================
+
+.bank-app {
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr);
+  min-height: 100vh;
+}
+
+.bank-sidebar {
+  background: $color-primary;
+  color: $color-white;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: $spacing-lg $spacing-md;
+}
+
+.bank-main {
+  min-width: 0;
+  background: $color-bg;
+}
+
+.bank-header {
+  background: $color-white;
+  border-bottom: 1px solid $color-border;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $spacing-lg;
+  min-height: 76px;
+  padding: $spacing-md $spacing-xl;
+}
+
+.bank-content {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: $spacing-xl;
+}
+
+.bank-sidebar__link:focus-visible,
+.bank-widget__action:focus-visible,
+.skip-link:focus-visible {
+  outline: 3px solid $color-secondary;
+  outline-offset: 3px;
+}
+
+@media (max-width: #{$bp-md - 1px}) {
+  .bank-app {
+    display: block;
+  }
+
+  .bank-sidebar {
+    min-height: auto;
+    padding: $spacing-sm $spacing-md;
+  }
+
+  .bank-sidebar__brand {
+    justify-content: center;
+  }
+
+  .bank-sidebar__nav {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .bank-header {
+    padding: $spacing-md;
+  }
+
+  .bank-content {
+    padding: $spacing-lg $spacing-md;
+  }
 }
