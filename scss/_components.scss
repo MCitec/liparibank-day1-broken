@@ -6,6 +6,38 @@
 // Cards
 // =============================================================================
 
+.widget-card {
+  @include card;
+
+  &__title {
+    margin-bottom: $spacing-md;
+    color: $color-text-muted;
+    font-size: $font-size-sm;
+    font-weight: 600;
+  }
+
+  &__value {
+    color: $color-text;
+    font-size: $font-size-2xl;
+    font-weight: 700;
+    line-height: 1.1;
+
+    &--positive {
+      color: $color-success;
+    }
+
+    &--negative {
+      color: $color-danger;
+    }
+  }
+
+  &__detail {
+    margin-top: $spacing-sm;
+    color: $color-text-muted;
+    font-size: $font-size-sm;
+  }
+}
+
 .bank-card {
   @include card;
   width: 100%;
@@ -156,6 +188,96 @@
 // Forms
 // =============================================================================
 
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-md;
+}
+
+.login-form {
+  width: 100%;
+  max-width: 400px;
+  padding: $spacing-xl;
+  background: $color-white;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  box-shadow: $shadow-sm;
+
+  fieldset {
+    border: 0;
+  }
+
+  legend {
+    width: 100%;
+    margin-bottom: $spacing-xl;
+    color: $color-text;
+    font-size: $font-size-xl;
+    font-weight: 600;
+  }
+
+  &__field {
+    margin-bottom: $spacing-lg;
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: $spacing-sm;
+    color: $color-text;
+    font-size: $font-size-sm;
+    font-weight: 500;
+  }
+
+  &__input {
+    width: 100%;
+    padding: $spacing-sm $spacing-md;
+    border: 1.5px solid $color-border;
+    border-radius: $radius-md;
+    color: $color-text;
+    background: $color-white;
+    font-family: $font-family;
+    font-size: $font-size-base;
+
+    &:focus {
+      outline: none;
+      border-color: $color-secondary;
+      box-shadow: 0 0 0 3px rgba($color-secondary, 0.15);
+    }
+  }
+
+  small {
+    display: block;
+    margin-top: $spacing-xs;
+    color: $color-text-muted;
+    font-size: $font-size-xs;
+  }
+
+  &__submit {
+    width: 100%;
+    padding: $spacing-md $spacing-xl;
+    border: 0;
+    border-radius: $radius-md;
+    background: $color-secondary;
+    color: $color-white;
+    cursor: pointer;
+    font-family: $font-family;
+    font-size: $font-size-base;
+    font-weight: 600;
+
+    &:hover {
+      background: darken($color-secondary, 8%);
+    }
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .login-form {
+    width: 100%;
+    padding: 16px;
+  }
+}
+
 .form-group {
   margin-bottom: $spacing-lg;
 
@@ -279,6 +401,48 @@ select.form-control {
   }
   &--debit {
     color: $color-danger;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .transactions-table {
+    display: block;
+
+    thead {
+      display: none;
+    }
+
+    tbody,
+    tr,
+    td {
+      display: block;
+    }
+
+    tr {
+      padding: $spacing-sm 0;
+      border-bottom: 1px solid $color-border;
+    }
+
+    tr:last-child {
+      border-bottom: 0;
+    }
+
+    td {
+      display: block;
+      padding: $spacing-sm 0;
+      border-bottom: 0;
+      text-align: right;
+
+      &::before {
+        content: attr(data-label);
+        float: left;
+        color: $color-text-muted;
+        font-size: $font-size-xs;
+        font-weight: 600;
+        text-align: left;
+        text-transform: uppercase;
+      }
+    }
   }
 }
 
