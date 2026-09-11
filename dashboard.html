@@ -1,124 +1,239 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="it">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard - LipariBank</title>
-    <link rel="stylesheet" href="dist/main.css" />
-  </head>
-  <body>
-    <header class="app-header">
-      <a class="app-header__logo" href="dashboard.html">
-        <img src="assets/logo.svg" alt="LipariBank" />
-      </a>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — LipariBank</title>
+  <link rel="stylesheet" href="dist/main.css">
+</head>
+<body>
 
-      <nav class="app-header__nav" aria-label="Navigazione principale">
-        <a href="dashboard.html" aria-current="page">Dashboard</a>
-        <a href="transactions.html">Transazioni</a>
-        <a href="account.html">Conto</a>
+  <div class="app">
+
+    <!-- =====================================================================
+         SIDEBAR
+         ===================================================================== -->
+    <aside class="sidebar">
+      <div class="sidebar__logo">
+        <img src="assets/logo.svg" alt="LipariBank">
+      </div>
+
+      <nav class="sidebar__nav" aria-label="Navigazione principale">
+        <ul class="sidebar-nav__list">
+
+          <li class="sidebar-nav__item">
+            <a href="dashboard.html" class="sidebar-nav__link sidebar-nav__link--active" aria-current="page">
+              <span class="nav-icon">🏠</span>
+              <span>Dashboard</span>
+            </a>
+          </li>
+
+          <li class="sidebar-nav__item">
+            <a href="transactions.html" class="sidebar-nav__link">
+              <span class="nav-icon">💳</span>
+              <span>Transazioni</span>
+            </a>
+          </li>
+
+          <li class="sidebar-nav__item">
+            <a href="account.html" class="sidebar-nav__link">
+              <span class="nav-icon">👤</span>
+              <span>Il Mio Conto</span>
+            </a>
+          </li>
+
+          <li class="sidebar-nav__item">
+            <a href="policy-form.html" class="sidebar-nav__link">
+              <span class="nav-icon">📋</span>
+              <span>Polizze</span>
+            </a>
+          </li>
+
+        </ul>
       </nav>
 
-      <div class="app-header__user">
-        <span>Mario Rossi</span>
-        <span class="app-header__avatar" aria-hidden="true">MR</span>
+      <div class="sidebar__footer">
+        © 2024 LipariBank S.p.A.
       </div>
-    </header>
+    </aside>
 
-    <div class="app-shell">
-      <aside class="app-sidebar">
-        <nav aria-label="Navigazione secondaria">
-          <h2 class="app-sidebar__title">Il mio spazio</h2>
-          <ul class="app-sidebar__nav">
-            <li>
-              <a
-                class="app-sidebar__link app-sidebar__link--active"
-                href="dashboard.html"
-                aria-current="page"
-                >Panoramica</a
-              >
-            </li>
-            <li>
-              <a class="app-sidebar__link" href="transactions.html"
-                >Movimenti</a
-              >
-            </li>
-            <li>
-              <a class="app-sidebar__link" href="account.html"
-                >Dati personali</a
-              >
-            </li>
-            <li>
-              <a class="app-sidebar__link" href="policy-form.html">Polizze</a>
-            </li>
-            <li><a class="app-sidebar__link" href="login.html">Esci</a></li>
-          </ul>
-        </nav>
-      </aside>
+    <!-- =====================================================================
+         MAIN
+         ===================================================================== -->
+    <main class="main">
 
-      <main class="app-main">
-        <section class="widget-grid" aria-label="Riepilogo conto">
-          <article class="widget-card">
-            <h2 class="widget-card__title">Saldo</h2>
-            <p class="widget-card__value">€ 12.450,80</p>
-            <p class="widget-card__detail">Disponibile sul conto</p>
-          </article>
+      <!-- Topbar -->
+      <header class="topbar">
+        <h1 class="topbar__title">Dashboard</h1>
+        <div class="topbar__user">
+          <span>Mario Rossi</span>
+          <div class="topbar__avatar">MR</div>
+        </div>
+      </header>
 
-          <article class="widget-card">
-            <h2 class="widget-card__title">Entrate</h2>
-            <p class="widget-card__value widget-card__value--positive">
-              € 3.200,00
-            </p>
-            <p class="widget-card__detail">Totale del mese</p>
-          </article>
+      <!-- Contenuto pagina -->
+      <div class="page-content">
 
-          <article class="widget-card">
-            <h2 class="widget-card__title">Uscite</h2>
-            <p class="widget-card__value widget-card__value--negative">
-              € 1.840,35
-            </p>
-            <p class="widget-card__detail">Totale del mese</p>
-          </article>
-        </section>
+        <!-- Alert promozionale -->
+        <div class="alert alert--info bank-spacing bank-spacing--mb-lg">
+          <span>💡</span>
+          <div>
+            <strong>Novità:</strong> attiva il tuo Piano Risparmio Plus e ottieni l'1,8% annuo garantito.
+            <a href="policy-form.html" style="color:inherit; font-weight:600;">Scopri di più →</a>
+          </div>
+        </div>
 
-        <section
-          class="transactions-section"
-          aria-labelledby="transactions-title"
-        >
-          <h2 id="transactions-title">Ultimi Movimenti</h2>
-          <div class="transactions-section__table-wrapper">
+        <!-- KPI Cards -->
+        <div class="bank-grid bank-grid--cols-4 bank-spacing bank-spacing--mb-xl">
+
+          <div class="stat-card">
+            <span class="stat-card__icon">🏦</span>
+            <div class="stat-card__label">Saldo Conto</div>
+            <div class="stat-card__value">€ 12.450,80</div>
+            <div class="stat-card__change stat-card__change--up">▲ +2,4% questo mese</div>
+          </div>
+
+          <div class="stat-card">
+            <span class="stat-card__icon">📈</span>
+            <div class="stat-card__label">Entrate Mese</div>
+            <div class="stat-card__value stat-card__value--positive">€ 3.200,00</div>
+            <div class="stat-card__change">Stipendio + rimborsi</div>
+          </div>
+
+          <div class="stat-card">
+            <span class="stat-card__icon">📉</span>
+            <div class="stat-card__label">Uscite Mese</div>
+            <div class="stat-card__value stat-card__value--negative">€ 1.840,35</div>
+            <div class="stat-card__change stat-card__change--down">▼ +12% vs mese scorso</div>
+          </div>
+
+          <div class="stat-card">
+            <span class="stat-card__icon">💰</span>
+            <div class="stat-card__label">Risparmio Netto</div>
+            <div class="stat-card__value stat-card__value--accent">€ 1.359,65</div>
+            <div class="stat-card__change stat-card__change--up">▲ Obiettivo raggiunto</div>
+          </div>
+
+        </div>
+
+        <!-- bank-grid principale: transazioni recenti + azioni rapide -->
+        <div class="bank-grid bank-grid--main">
+
+          <!-- Transazioni recenti -->
+          <div class="bank-card">
+            <div class="bank-card__header">
+              <h2 class="bank-card__title">Ultime Transazioni</h2>
+              <a href="transactions.html" class="bank-button bank-button--outline bank-button--sm">Vedi tutte</a>
+            </div>
+
             <table class="transactions-table">
               <thead>
                 <tr>
-                  <th scope="col">Data</th>
-                  <th scope="col">Descrizione</th>
-                  <th scope="col">Categoria</th>
-                  <th scope="col">Importo</th>
+                  <th>Data</th>
+                  <th>Descrizione</th>
+                  <th>Categoria</th>
+                  <th>Stato</th>
+                  <th class="col-amount">Importo</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>03 gen 2024</td>
-                  <td>Stipendio - Acme S.r.l.</td>
-                  <td>Entrata</td>
-                  <td class="amount amount--credit">+€ 2.800,00</td>
+                  <td class="col-date">03 gen 2024</td>
+                  <td>Stipendio — Acme S.r.l.</td>
+                  <td><span class="badge badge--success">Entrata</span></td>
+                  <td><span class="badge badge--success">Completata</span></td>
+                  <td class="col-amount amount amount--credit">+€ 2.800,00</td>
                 </tr>
                 <tr>
-                  <td>02 gen 2024</td>
-                  <td>Esselunga - Spesa settimanale</td>
-                  <td>Alimentari</td>
-                  <td class="amount amount--debit">-€ 87,40</td>
+                  <td class="col-date">02 gen 2024</td>
+                  <td>Esselunga — Spesa settimanale</td>
+                  <td><span class="badge badge--neutral">Alimentari</span></td>
+                  <td><span class="badge badge--success">Completata</span></td>
+                  <td class="col-amount amount amount--debit">-€ 87,40</td>
                 </tr>
                 <tr>
-                  <td>01 gen 2024</td>
-                  <td>Enel Energia - Bolletta dicembre</td>
-                  <td>Utenze</td>
-                  <td class="amount amount--debit">-€ 124,00</td>
+                  <td class="col-date">01 gen 2024</td>
+                  <td>Enel Energia — Bolletta dicembre</td>
+                  <td><span class="badge badge--neutral">Utenze</span></td>
+                  <td><span class="badge badge--success">Completata</span></td>
+                  <td class="col-amount amount amount--debit">-€ 124,00</td>
+                </tr>
+                <tr>
+                  <td class="col-date">31 dic 2023</td>
+                  <td>Netflix — Abbonamento mensile</td>
+                  <td><span class="badge badge--neutral">Svago</span></td>
+                  <td><span class="badge badge--success">Completata</span></td>
+                  <td class="col-amount amount amount--debit">-€ 15,99</td>
+                </tr>
+                <tr>
+                  <td class="col-date">30 dic 2023</td>
+                  <td>Rimborso spese — Mario V.</td>
+                  <td><span class="badge badge--info">Bonifico</span></td>
+                  <td><span class="badge badge--success">Completata</span></td>
+                  <td class="col-amount amount amount--credit">+€ 50,00</td>
+                </tr>
+                <tr>
+                  <td class="col-date">29 dic 2023</td>
+                  <td>Amazon — Ordine #114-789</td>
+                  <td><span class="badge badge--neutral">Shopping</span></td>
+                  <td><span class="badge badge--warning">In attesa</span></td>
+                  <td class="col-amount amount amount--debit">-€ 239,00</td>
                 </tr>
               </tbody>
             </table>
           </div>
-        </section>
-      </main>
-    </div>
-  </body>
+
+          <!-- Sidebar destra: azioni rapide -->
+          <div style="display: flex; flex-direction: column; gap: 24px;">
+
+            <div class="bank-card">
+              <div class="bank-card__header">
+                <h2 class="bank-card__title">Azioni Rapide</h2>
+              </div>
+              <div class="quick-actions">
+                <a href="#" class="quick-action">
+                  <span class="quick-action__icon">↗️</span>
+                  <span>Bonifico</span>
+                </a>
+                <a href="#" class="quick-action">
+                  <span class="quick-action__icon">📲</span>
+                  <span>Ricarica</span>
+                </a>
+                <a href="#" class="quick-action">
+                  <span class="quick-action__icon">💳</span>
+                  <span>Nuova carta</span>
+                </a>
+                <a href="policy-form.html" class="quick-action">
+                  <span class="quick-action__icon">🛡️</span>
+                  <span>Polizza</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="bank-card">
+              <div class="bank-card__header">
+                <h2 class="bank-card__title">Carta di Credito</h2>
+              </div>
+              <div class="bank-card__body">
+                <div style="margin-bottom: 12px;">
+                  <div style="font-size:12px; color:#7f8c8d; text-transform:uppercase; letter-spacing:0.07em; margin-bottom:4px;">Limite disponibile</div>
+                  <div style="font-size:24px; font-weight:700; color:#2c3e50;">€ 3.500,00</div>
+                </div>
+                <div style="height:6px; background:#dde1e7; border-radius:9999px; margin-bottom:8px;">
+                  <div style="width:30%; height:100%; background:#2d7dd2; border-radius:9999px;"></div>
+                </div>
+                <div style="font-size:12px; color:#7f8c8d;">Usato: € 1.500,00 di € 5.000,00</div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+
+</body>
 </html>
